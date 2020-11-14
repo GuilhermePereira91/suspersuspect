@@ -8,8 +8,6 @@ class Produtos {
     public $supermercado;
     public $valor;
     public $validade;
-    public $valorpromocional;
-    public $promocaoativa;
     public $datacadastro;
 
 }

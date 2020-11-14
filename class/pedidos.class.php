@@ -1,7 +1,8 @@
 <?php
     class Pedidos {
         public $data;
-        public $codigorastreio;
+        public $codigoenvio;
+        public $produto;
         public $usuario;
         public $status;        
 
