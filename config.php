@@ -1,6 +1,8 @@
 <?php
 session_start();
+
 setlocale(LC_ALL, "pt_BR", "pt_BR.utf-8", "portuguese");
+
 $config = array();
     $config['dbname'] = 'supersuspect';
     $config['host'] = 'localhost';
@@ -15,7 +17,4 @@ global $db;
         echo "ERRO: ".$e->getMessage();
     }
 
-   if(isset($_SESSION['usuario'])){
-        header("Location: view/login.php");
-   }
 ?>
