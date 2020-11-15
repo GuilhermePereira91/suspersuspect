@@ -65,7 +65,7 @@
             $this->senha = $senha;
         }
 
-        public function getTipousuario(){
+        public function getTipo(){
             return $this->tipousuario;
         }
 
@@ -112,6 +112,18 @@
                 return false;
             }
 
+        }
+
+        public function gettipoUsuario(){
+        
+            $array = array();
+            $sql = $this->db->prepare("SELECT * FROM usuariostipo");
+            $sql->execute();
+    
+            if($sql->rowCount() > 0){
+                $array = $sql->fetch();            
+            }
+            return $array;
         }
 
         
