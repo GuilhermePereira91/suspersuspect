@@ -1,6 +1,6 @@
 <?php
     require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/config.php';
-    
+    require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/class/usuarios.class.php';
 ?>
 <!DOCTYPE HTML>
 <html lang="pt-br">
@@ -12,20 +12,23 @@
         <title>Cadastrar Usuario</title>
     </head>
     <body>
-        <form method="POST">
-            <div class="form-group">
-                <label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome" class="form-control" />
-                <label for="email">E-mail:</label>
-                <input type="email" name="email" id="email" class="form-control" />
-                <label for="endereço">Endereço:</label>
-                <input type="text" name="endereco" id="endereco" class="form-control" />
-                <label for="senha">Senha:</label>
-                <input type="password" name="senha" id="senha" class="form-control" />
-                <label for="telefone">Telefone:</label>
-                <input type="text" name="telefone" id="telefone" class="form-control" />
-            </div>
-            <input type="submit" value="Cadastrar" class="btn btn-secondary" />
+        <h1><strong>Cadastro de Usuario</strong></h1>
+        <form method="POST" action="cadastroUsuario.php">
+            <label for="nome">Nome Completo:</label><br/>
+            <input type="text" name="nome" /><br/>
+            <label for="endereco">Endereço:</label><br/>
+            <input type="text" name="endereco"/><br/>
+            <label for="email">Email:</label><br/>
+            <input type="email" name="email"/><br/>
+            <label for="cartaocredito">Numero do cartão de credito:</label><br/>
+            <input type="text" name="cartaocredito"/><br/>
+            <label for="cpf">CPF:</label><br/>
+            <input type="text" name="cpf"/><br/>
+            <label for="telefone">Telefone:</label><br/>
+            <input type="text" name="telefone"/><br/>
+            <label for="senha">Senha:</label><br/>
+            <input type="password" name="senha"/><br/><br/>
+            <input type="submit" value="Cadastrar">
         </form>
     </body>
 </html>

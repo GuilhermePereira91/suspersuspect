@@ -1,4 +1,5 @@
 <?php
+    require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/core/class.php';
     class Usuario extends Model{
         private $nome;
         private $endereco;

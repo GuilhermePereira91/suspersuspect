@@ -1,7 +1,6 @@
 <?php
     require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/config.php';
-    
-
+    require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/class/usuarios.class.php';
 ?>
 <!DOCTYPE HTML>
 <html lang="pt-br">
@@ -13,12 +12,6 @@
         <title>Login</title>
     </head>
     <body>
-        <form method="GET" action="">
-            Usuario:<br/>
-            <input name="usuario" type="text" ><br/><br/>
-            Senha:<br/>
-            <input name="senha" type="password"><br/><br/>
-            <input type="submit" value="Entrar">
-        </form>
+        
     </body>
 </html>

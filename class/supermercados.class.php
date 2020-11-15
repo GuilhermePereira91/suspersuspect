@@ -1,4 +1,5 @@
 <?php
+    require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/core/class.php';
     class Supermercados extends Model{
         private $cnpj;
         private $razaosocial;
@@ -72,11 +73,11 @@
         public function getSupermercados(){
         
             $array = array();
-            $sql = $this->db->prepare("SELECT id, razaosocial FROM supermercados");
+            $sql = $this->db->prepare("SELECT id, razaosocial FROM supermercados;");
             $sql->execute();
     
             if($sql->rowCount() > 0){
-                $array = $sql->fetch();            
+                $array = $sql->fetchAll(PDO::FETCH_ASSOC);            
             }
             return $array;
         }
