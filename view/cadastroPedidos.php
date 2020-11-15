@@ -1,5 +1,6 @@
 <?php
     require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/config.php';
+    
 ?>
 <!DOCTYPE HTML>
 <html lang="pt-br">
@@ -11,6 +12,8 @@
         <title>Cadastrar Pedidos</title>
     </head>
     <body>
-
+        <form method="POST" action="">
+            
+        </form>
     </body>
 </html>

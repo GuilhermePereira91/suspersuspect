@@ -1,5 +1,8 @@
 <?php
     require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/config.php';
+    if (!isset($_SESSION['usuario'])){
+        header("Location: /supersuspect/view/login.php");
+    }
 ?>
 <!DOCTYPE HTML>
 <html lang="pt-br">
