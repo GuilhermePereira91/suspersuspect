@@ -115,7 +115,7 @@ class Produtos extends Model{
     public function getProduto($id){
         
         $array = array();
-        $sql = $this->db->prepare("SELECT * FROM produtos WHERE id = :id");
+        $sql = $this->db->prepare("SELECT produtos.nome as Nome, descricao as Descrição, Categoria.nome as Categoria, supermercados.razaosocial as SuperMercado, quantidade as Quantidade, valor as Valor, DATE_FORMAT(validade, '%Y-%m-%d') as Validade FROM produtos INNER JOIN produtoscategorias AS Categoria ON Categoria.id = produtos.idcategoria INNER JOIN supermercados ON supermercados.id = produtos.idsupermercado WHERE id = :id");
         $sql->bindValue(":id", $id);
         $sql->execute();
 
@@ -127,11 +127,11 @@ class Produtos extends Model{
     public function getProdutos(){
         
         $array = array();
-        $sql = $this->db->prepare("SELECT * FROM produtos");
+        $sql = $this->db->prepare("SELECT produtos.nome as Nome, descricao as 'Descrição', Categoria.nome as 'Categoria', supermercados.razaosocial as 'SuperMercado', quantidade as 'Quantidade', valor as 'Valor', DATE_FORMAT(validade, '%Y-%m-%d') as 'Validade' FROM produtos INNER JOIN produtoscategorias AS Categoria ON Categoria.id = produtos.idcategoria INNER JOIN supermercados ON supermercados.id = produtos.idsupermercado ORDER BY Nome ASC");
         $sql->execute();
 
         if($sql->rowCount() > 0){
-            $array = $sql->fetch();            
+            $array = $sql->fetchAll(PDO::FETCH_ASSOC);            
         }
         return $array;
     }
@@ -143,7 +143,19 @@ class Produtos extends Model{
         $sql->execute();
 
         if($sql->rowCount() > 0){
-            $array = $sql->fetch();            
+            $array = $sql->fetchAll(PDO::FETCH_ASSOC);           
+        }
+        return $array;
+    }
+
+    public function getUltimosprodutos(){
+        
+        $array = array();
+        $sql = $this->db->prepare("SELECT produtos.nome as Nome, descricao as 'Descrição', Categoria.nome as 'Categoria', supermercados.razaosocial as 'SuperMercado', quantidade as 'Quantidade', valor as 'Valor', DATE_FORMAT(validade, '%Y-%m-%d') as 'Validade' FROM produtos INNER JOIN produtoscategorias AS Categoria ON Categoria.id = produtos.idcategoria INNER JOIN supermercados ON supermercados.id = produtos.idsupermercado ORDER BY produtos.datacadastro DESC LIMIT 10");
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $array = $sql->fetchAll(PDO::FETCH_ASSOC);            
         }
         return $array;
     }

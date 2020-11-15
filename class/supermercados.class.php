@@ -73,7 +73,7 @@
         public function getSupermercados(){
         
             $array = array();
-            $sql = $this->db->prepare("SELECT id, razaosocial FROM supermercados;");
+            $sql = $this->db->prepare("SELECT id, razaosocial FROM supermercados");
             $sql->execute();
     
             if($sql->rowCount() > 0){

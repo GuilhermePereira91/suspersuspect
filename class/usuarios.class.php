@@ -122,6 +122,19 @@
             $sql->execute();
     
             if($sql->rowCount() > 0){
+                $array = $sql->fetchAll(PDO::FETCH_ASSOC);            
+            }
+            return $array;
+        }
+
+        public function getusuarioNome($id){
+        
+            $array = array();
+            $sql = $this->db->prepare("SELECT nome FROM usuarios WHERE id = :id");
+            $sql->bindValue(":id", $id);
+            $sql->execute();
+    
+            if($sql->rowCount() > 0){
                 $array = $sql->fetch();            
             }
             return $array;

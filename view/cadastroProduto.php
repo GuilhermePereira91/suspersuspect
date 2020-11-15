@@ -11,7 +11,7 @@
 <!DOCTYPE HTML>
 <html lang="pt-br">
     <head>
-        <meta charset=”UTF-8”>
+        <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
         <script type="text/javascript" src="assets/js/bootstrap.min.js" ></script>
@@ -34,6 +34,8 @@
             <input type="text" name="descricao"/><br/>
             <label for="valor">Valor:</label><br/>
             <input type="number" name="valor"/><br/>
+            <label for="validade">Validade:</label><br/>
+            <input type="date" name="validade"/><br/>
             <input type="submit" value="Cadastrar">
         </form>
     </body>
