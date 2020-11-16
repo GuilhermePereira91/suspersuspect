@@ -1,69 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/core/class.php';
 class Produtos extends Model{
-    private $nome;
-    private $categoria;
-    private $descricao;
-    private $quantidade;
-    private $supermercado;
-    private $valor;
-    private $validade;
-
-    public function getNome(){
-        return $this->nome;
-    }
-
-    public function setNome($nome){
-        $this->nome = $nome;
-    }
-
-    public function getCategoria(){
-        return $this->categoria;
-    }
-
-    public function setCategoria($categoria){
-        $this->categoria = $categoria;
-    }
-
-    public function getDescricao(){
-        return $this->descricao;
-    }
-
-    public function setDescricao($descricao){
-        $this->descricao = $descricao;
-    }
-
-    public function getQuantidade(){
-        return $this->quantidade;
-    }
-
-    public function setQuantidade($quantidade){
-        $this->quantidade = $quantidade;
-    }
-
-    public function getSupermercado(){
-        return $this->supermercado;
-    }
-
-    public function setSupermercado($supermercado){
-        $this->supermercado = $supermercado;
-    }
-
-    public function getValor(){
-        return $this->valor;
-    }
-
-    public function setValor($valor){
-        $this->valor = $valor;
-    }
-
-    public function getValidade(){
-        return $this->validade;
-    }
-
-    public function setValidade($validade){
-        $this->validade = $validade;
-    }
 
     public function cadastrar($nome, $categoria, $descricao,  $quantidade, $idsupermercado, $valor, $validade){
             

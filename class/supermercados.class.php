@@ -1,43 +1,7 @@
 <?php
     require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/core/class.php';
     class Supermercados extends Model{
-        private $cnpj;
-        private $razaosocial;
-        private $endereco;
-        private $telefone;
-
-        public function getCnpj(){
-            return $this->cnpj;
-        }
-
-        public function setCnpj($cnpj){
-            $this->cnpj = $cnpj;
-        }
-
-        public function getRazaosocial(){
-            return $this->razaosocial;
-        }
-
-        public function setRazaosocial($razaosocial){
-            $this->razaosocial = $razaosocial;
-        }
-
-        public function getEndereco(){
-            return $this->endereco;
-        }
-
-        public function setEndereco($endereco){
-            $this->endereco = $endereco;
-        }
-
-        public function getTelefone(){
-            return $this->telefone;
-        }
-
-        public function setTelefone($telefone){
-            $this->telefone = $telefone;
-        }
-
+        
         public function cadastrar($razaosocial, $cnpj, $telefone,  $endereco){
             
             $sql = $this->db->prepare("SELECT id FROM supermercados WHERE cnpj = :cnpj");
