@@ -1,5 +1,8 @@
 <?php
     require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/config.php';
+    if (!isset($_SESSION['cLogin']) && empty($_SESSION['cLogin'])){
+        header("Location: /supersuspect/view/login.php");
+    }
     require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/class/usuarios.class.php';
     $usuario = new Usuario();
     if(isset($_POST['nome']) && isset($_POST['cpf']) && isset($_POST['senha'])){
@@ -29,6 +32,7 @@
         <title>Cadastrar Usuario</title>
     </head>
     <body>
+        <?php require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/view/template.php'; ?>
         <h1><strong>Cadastro de Usuario</strong></h1>
         <form method="POST" action="cadastroUsuario.php">
             <label for="nome">Nome Completo:</label><br/>

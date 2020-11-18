@@ -1,6 +1,9 @@
 <?php
     require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/config.php';
     require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/class/produtos.class.php';
+    if (!isset($_SESSION['cLogin']) && empty($_SESSION['cLogin'])){
+        header("Location: /supersuspect/view/login.php");
+    }
     $produtos = new Produtos();
     $listaprodutos = $produtos->getProdutos();
 
@@ -16,6 +19,7 @@
         <title>Produtos</title>
     </head>
     <body>
+    <?php require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/view/template.php'; ?>
         <h1><strong>Lista de produtos:</strong></h1>
         <table style="width:100%">
             <tr>
@@ -38,9 +42,9 @@
                     <td><?php echo "R$".$produto['Valor'];?></td>
                     <td><?php echo $produto['Validade'];?></td>
                     <td>
-                        <a href="">[+Carrinho]</a>
-                        <a href="">[Alterar]</a>
-                        <a href="">[Excluir]</a>
+                        <a href="carrinho.php?id=<?php echo utf8_encode($produto['id']);?>">[+Carrinho]</a>
+                        <a href="alterarproduto.php?id=<?php echo utf8_encode($produto['id']);?>">[Alterar]</a>
+                        <a href="excluirproduto.php?id=<?php echo utf8_encode($produto['id']);?>">[Excluir]</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

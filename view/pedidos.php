@@ -1,5 +1,8 @@
 <?php
     require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/config.php';
+    if (!isset($_SESSION['cLogin']) && empty($_SESSION['cLogin'])){
+        header("Location: /supersuspect/view/login.php");
+    }
 ?>
 <!DOCTYPE HTML>
 <html lang="pt-br">
@@ -11,6 +14,6 @@
         <title>Pedidos</title>
     </head>
     <body>
-
+        <?php require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/view/template.php'; ?>
     </body>
 </html>
