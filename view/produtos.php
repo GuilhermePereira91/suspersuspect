@@ -42,7 +42,7 @@
                     <td><?php echo "R$".$produto['Valor'];?></td>
                     <td><?php echo $produto['Validade'];?></td>
                     <td>
-                        <a href="carrinho.php?id=<?php echo utf8_encode($produto['id']);?>">[+Carrinho]</a>
+                        <a href="cadastrarcarrinho.php?id=<?php echo utf8_encode($produto['id']);?>">[+Carrinho]</a>
                         <a href="alterarproduto.php?id=<?php echo utf8_encode($produto['id']);?>">[Alterar]</a>
                         <a href="excluirproduto.php?id=<?php echo utf8_encode($produto['id']);?>">[Excluir]</a>
                     </td>
