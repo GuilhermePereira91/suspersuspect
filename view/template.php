@@ -13,8 +13,8 @@ $usuarionome = $usuario->getusuarioNome($_SESSION['cLogin']);
         <ul>
         <li><a href="principal.php">Home</a></li>
             <li><a href="produtos.php">Lista de Produtos</a></li>
-            <li><a href="cadastroproduto.php">Cadastrar Produtos</li>
-            <li><a href="cadastrosupermercado.php">Cadastrar Supermercado</li>
+            <?php echo ($_SESSION['cTipoLogin'] == 1)?'<li><a href="cadastroproduto.php">Cadastrar Produtos</li>':''?>
+            <?php echo ($_SESSION['cTipoLogin'] == 1)?'<li><a href="cadastrosupermercado.php">Cadastrar Supermercado</li>':''?>
             <li><a href="carrinho.php">Carrinho</li>
             <li><a href="pedidos.php">Meus Pedidos</li>
             <li><a href="sair.php">Sair</a></li>

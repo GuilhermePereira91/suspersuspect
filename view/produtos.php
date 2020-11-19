@@ -42,9 +42,10 @@
                     <td><?php echo "R$".$produto['Valor'];?></td>
                     <td><?php echo $produto['Validade'];?></td>
                     <td>
-                        <a href="cadastrarcarrinho.php?id=<?php echo utf8_encode($produto['id']);?>">[+Carrinho]</a>
-                        <a href="alterarproduto.php?id=<?php echo utf8_encode($produto['id']);?>">[Alterar]</a>
-                        <a href="excluirproduto.php?id=<?php echo utf8_encode($produto['id']);?>">[Excluir]</a>
+                        <a href="cadastrarcarrinho.php?id=<?php echo $produto['id'];?>">[+Carrinho]</a>
+                        <?php echo ($_SESSION['cTipoLogin'] == 1)?'<a href="alterarproduto.php?id='.$produto['id'].'">[Alterar]</a>':'';?>
+                        <?php echo ($_SESSION['cTipoLogin'] == 1)?'<a href="excluirproduto.php?id='.$produto['id'].'">[Excluir]</a>':'';?>
+                        
                     </td>
                 </tr>
             <?php endforeach; ?>

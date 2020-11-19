@@ -28,7 +28,7 @@
 
         public function login($email, $senha){
             
-            $sql = $this->db->prepare("SELECT id FROM usuarios WHERE email = :email AND senha = :senha");
+            $sql = $this->db->prepare("SELECT id, idtipousuario FROM usuarios WHERE email = :email AND senha = :senha");
             $sql->bindValue(":email", $email);
             $sql->bindValue(":senha", md5($senha));
             $sql->execute();
@@ -36,6 +36,7 @@
             if($sql->rowCount() > 0){
                 $dado = $sql->fetch();
                 $_SESSION['cLogin'] = $dado['id'];
+                $_SESSION['cTipoLogin'] = $dado['idtipousuario'];
                 return true;
             }else{
                 return false;
