@@ -6,7 +6,7 @@
     }
     $carrinho = new Carrinho();
     $id = $_GET['id'];
-    if($carrinho->excluir($id)){
+    if($carrinho->excluirProduto($id)){
         header("Location: /supersuspect/view/carrinho.php");
     }else{
         echo 'Erro!';

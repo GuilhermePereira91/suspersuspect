@@ -1,9 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/class/usuarios.class.php';
-if (!isset($_SESSION['cLogin']) && empty($_SESSION['cLogin'])){
-    header("Location: /supersuspect/view/login.php");
-}
 $usuario = new Usuario();
 $usuarionome = $usuario->getusuarioNome($_SESSION['cLogin']);
 ?>
@@ -11,7 +8,7 @@ $usuarionome = $usuario->getusuarioNome($_SESSION['cLogin']);
 
         Menu:<br>
         <ul>
-        <li><a href="principal.php">Home</a></li>
+        <li><a href="principal.php">Início</a></li>
             <li><a href="produtos.php">Lista de Produtos</a></li>
             <?php echo ($_SESSION['cTipoLogin'] == 1)?'<li><a href="cadastroproduto.php">Cadastrar Produtos</li>':''?>
             <?php echo ($_SESSION['cTipoLogin'] == 1)?'<li><a href="cadastrosupermercado.php">Cadastrar Supermercado</li>':''?>

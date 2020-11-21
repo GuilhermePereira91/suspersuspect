@@ -40,7 +40,14 @@
             return $array;
         }
         
-        public function excluir($id){
+        public function excluir(){
+        
+            $sql = $this->db->prepare("DELETE FROM carrinho WHERE idusuario = :idusuario");
+            $sql->bindValue(":idusuario", $_SESSION['cLogin']);
+            $sql->execute();
+        }
+
+        public function excluirProduto($id){
         
             $sql = $this->db->prepare("DELETE FROM carrinho WHERE id = :id");
             $sql->bindValue(":id", $id);
@@ -49,12 +56,14 @@
             }else{
                 return false;
             }
+
         }
 
-        public function alterar($id, $qtdcompra){
+        public function alterar($idusuario,$idproduto, $qtdcompra){
             
-            $sql = $this->db->prepare("UPDATE carrinho SET (qtdcompra) VALUES (:qtdcompra) WHERE id = :id");
-            $sql->bindValue(":id", $id);
+            $sql = $this->db->prepare("UPDATE carrinho SET qtdcompra = :qtdcompra WHERE idproduto = :idproduto AND idusuario = :idusuario");
+            $sql->bindValue(":idproduto", $idproduto);
+            $sql->bindValue(":idusuario", $idusuario);
             $sql->bindValue(":qtdcompra", $qtdcompra);             
             if($sql->execute()){
                 return true;
