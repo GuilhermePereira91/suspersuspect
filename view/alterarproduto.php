@@ -45,7 +45,7 @@
     </head>
     <body>
         <?php require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/view/template.php'; ?>
-        <h1><strong>Cadastro de Produto</strong></h1>
+        <h1><strong>Alterar Produtos</strong></h1>
         <form method="POST" action="alterarproduto.php?id=<?php echo utf8_encode($prod['id']);?>">
             <label for="nome">Nome:</label><br/>
             <input type="text" name="nome" value="<?php echo utf8_encode($prod['Nome']); ?>" /><br/>
