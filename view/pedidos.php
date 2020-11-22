@@ -25,6 +25,7 @@
                 <th>Numero do pedido</th>
                 <th>Status</th>
                 <th>Valor Total</th>
+                <th>Forma de pagamento</th>
                 <th>Data do pedido</th>
                 <th>Ação</th>
             </tr>
@@ -33,12 +34,10 @@
                     <td><?php echo $pedido['id'];?></td>
                     <td><?php echo utf8_encode($pedido['pdstatus']);?></td>
                     <td><?php echo "R$".$pedido['valortotal'];?></td>
+                    <td><?php echo utf8_encode($pedido['formpagamento']);?></td>
                     <td><?php echo $pedido['datapedido'];?></td>
                     <td>
-                        <a href="confirmarpedido.php?id=<?php echo $pedido['id'];?>">[Confirmar]</a>
-                        <a href="cancelarpedido.php?id=<?php echo $pedido['id'];?>">[Cancelar]</a>
-                        <a href="detalhespedido.php?id=<?php echo $pedido['id'];?>">[Ver Detalhes]</a>
-                        <a href="envios.php?id=<?php echo $pedido['id'];?>">[Rastreio]</a>
+                        <a href="pedidosdetalhes.php?id=<?php echo $pedido['id'];?>">[Ver Detalhes]</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

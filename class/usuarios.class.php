@@ -69,6 +69,18 @@
             return $array;
         }
 
+        public function getEndereco(){
+            $array = array();
+            $sql = $this->db->prepare("SELECT endereco FROM usuarios WHERE id = :id");
+            $sql->bindValue(":id", $_SESSION['cLogin']);
+            $sql->execute();
+    
+            if($sql->rowCount() > 0){
+                $array = $sql->fetch();            
+            }
+            return $array;
+        }
+
         
     }
 ?>

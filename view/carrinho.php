@@ -4,8 +4,12 @@
         header("Location: /supersuspect/view/login.php");
     }
     require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/class/carrinho.class.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/class/envios.class.php';
     $carrinho = new Carrinho();
+    $envio = new Envios();
+    $listaen = $envio->getformEnvio();
     $listac = $carrinho->getCarrinho($_SESSION['cLogin']);
+    $listafp = $carrinho->getformpagamento();
 
 ?>
 <!DOCTYPE HTML>
@@ -39,7 +43,19 @@
                     </tr>
                 <?php endforeach; ?>
             </table>
-            <hr/>
+            <hr/><br>
+            Forma de pagamento:
+            <select name="formpagamento">
+                <?php foreach($listafp as $fp): ?>
+                    <option value="<?php echo $fp['id']; ?>"><?php echo utf8_encode($fp['descricao']); ?></option>
+                <?php endforeach; ?>
+            </select><br>
+            Forma de envio:
+            <select name="formenvio">
+                <?php foreach($listaen as $en): ?>
+                    <option value="<?php echo $en['id']; ?>"><?php echo utf8_encode($en['descricao']); ?></option>
+                <?php endforeach; ?>
+            </select><br><br>
             <input type="submit" value="Gerar Pedido">       
         </form>
         

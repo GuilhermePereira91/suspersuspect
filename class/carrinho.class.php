@@ -72,5 +72,16 @@
             }
         }
 
+        public function getformpagamento(){
+            $array = array();
+            $sql = $this->db->prepare("SELECT * FROM formapagamento");
+            $sql->execute();
+
+            if($sql->rowCount() > 0){
+                $array = $sql->fetchAll(PDO::FETCH_ASSOC);            
+            }
+            return $array;
+        }
+
     }
 ?>

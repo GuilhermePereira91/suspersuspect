@@ -24,7 +24,7 @@
         $valor = $_POST['valor'];
         $validade = $_POST['validade'];
         if($produto->alterar($id, $nome, $categoria, $descricao, $quantidade, $supermercado, $valor, $validade)){
-            header("Location: alterarproduto.php?id=".utf8_encode($prod['id']));
+            header("Location: alterarproduto.php?id=".$prod['id']);
             echo "Produto alterado com sucesso!<br/>";
         }else{
             echo "Erro ao Alterar!<br/>";
