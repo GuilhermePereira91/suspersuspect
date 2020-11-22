@@ -41,7 +41,7 @@
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
         <script type="text/javascript" src="assets/js/bootstrap.min.js" ></script>
-        <title>Cadastrar Produtos</title>
+        <title>Alterar Produtos</title>
     </head>
     <body>
         <?php require_once $_SERVER['DOCUMENT_ROOT'].'/supersuspect/view/template.php'; ?>
